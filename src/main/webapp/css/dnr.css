@@ -1,0 +1,116 @@
+#header h1 {
+	width: 60%;
+	float: right;  
+	color: #fff; 
+}
+
+.min_height_100 {
+	min-height: 100px; 
+}
+
+.min_height_200 {
+	min-height: 200px; 
+}
+
+.min_height_300 {
+	min-height: 300px; 
+}
+
+.min_height_500 {
+	min-height: 500px; 
+}
+
+#leftPane {
+	 width: 40%;
+	 float: left;
+}
+
+#rightPane {
+	width:58%;
+	float: right;
+}
+
+.errors {
+	font-size: medium;
+	font-weight: bold;
+	color: red;
+}
+
+.errors_small {
+	font-size: small;
+	font-weight: bold;
+	color: red;
+}
+
+.errors_large {
+	font-size: large;
+	font-weight: bold;
+	color: red;
+}
+
+.submit{
+	background-color: #036;
+	color: #fff;
+	font-weight: bold;
+	border: 2px outset #cc9;
+	margin: 2px;
+	height: auto;
+	padding: 4px;
+	width: auto;
+	text-align: center;
+	text-decoration: none;
+
+}
+
+#conference_header_region {
+	background-color: #fff; 
+}
+
+/* Resized browser window 
+	Uses max-width instead of max-device-width*/
+@media only screen and (max-width: 480px) {
+
+	#header h1 {
+		width: 100%;
+		float: none;  
+	}
+
+	#header img {
+		display: none;	
+	}
+	
+	.min_height_100 {
+		min-height: 5px; 
+	}
+
+	.min_height_200 {
+		min-height: 5px; 
+	}
+
+	.min_height_300 {
+		min-height: 5px; 
+	}
+	
+	.min_height_500 {
+		min-height: 6px; 
+	}
+	
+	.row {
+ 	 	margin-left: 0px !important;
+  		margin-right: 0px !important;
+	}
+	
+	.pull-right {
+  		float: left !important;	
+	}
+
+	#leftPane {
+		width: 100%;
+		float: none;
+	}
+	#rightPane {
+		width: 100%;
+		float: none;
+	}
+
+}	

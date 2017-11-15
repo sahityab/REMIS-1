@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+<!-- 	<field name="userVo.newUserId">
+	   <field-validator type="fieldexpression">
+	    	<param name="expression"><![CDATA[ !"create".equals(userVo.userId) &amp;&amp; (userVo.newUserId != null || !"".equals(userVo.newUserId.trim()) ) ]]></param>
+	    	<message key="error.user.new.userid.required"/>
+	   </field-validator>
+   </field>
+ -->   <field name="userVo.password">  
+      <field-validator type="requiredstring">
+          <message key="error.user.password.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="userVo.confirmPassword">  
+      <field-validator type="requiredstring">
+          <message key="error.user.confirm.password.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="userVo.confirmPassword">
+  		<field-validator type="fieldexpression">
+    		<param name="expression"><![CDATA[ userVo.password.equals(userVo.confirmPassword) ]]></param>
+    		<message key="error.user.password.confirmpassword.match"/>
+  		</field-validator>
+    </field>
+   	<field name="userVo.firstName">  
+      <field-validator type="requiredstring">
+          <message key="error.user.firstname.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="userVo.lastName">  
+      <field-validator type="requiredstring">
+          <message key="error.user.lastName.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="userVo.contNo">  
+      <field-validator type="requiredstring">
+          <message key="error.user.contact.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="userVo.address1">  
+      <field-validator type="requiredstring">
+          <message key="error.user.address1.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="userVo.city">  
+      <field-validator type="requiredstring">
+          <message key="error.user.city.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="userVo.state">  
+      <field-validator type="requiredstring">
+          <message key="error.user.state.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="userVo.zip">  
+      <field-validator type="requiredstring">
+          <message key="error.user.zip.required"/>
+      </field-validator>   
+   	</field>
+   <field name="userVo.email">  
+      <field-validator type="requiredstring">
+          <message key="message.user.email.required"/>
+      </field-validator>   
+	  <field-validator type="email">
+          <message key="message.user.email.invalid"/>
+      </field-validator>   
+   	</field>
+</validators>

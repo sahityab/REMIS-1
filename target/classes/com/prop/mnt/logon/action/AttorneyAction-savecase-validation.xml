@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+
+    <validator type="int">
+        <param name="fieldname">attorneyVo.propertyId</param>
+        <message>Property  is required.</message>
+    </validator>
+    
+    <validator type="requiredstring">
+        <param name="fieldname">attorneyVo.caseName</param>
+        <message>Case ID/No  is required.</message>
+    </validator>
+    
+     <validator type="requiredstring">
+        <param name="fieldname">attorneyVo.courtName</param>
+        <message>Court Name  is required.</message>
+    </validator>
+    
+    <!-- <validator type="requiredstring">
+        <param name="fieldname">attorneyVo.startDate</param>
+        <message>Start Date  is required.</message>
+    </validator> -->
+    
+    
+     <validator type="requiredstring">
+        <param name="fieldname">attorneyVo.petitioner</param>
+        <message>Petitioner  is required.</message>
+    </validator>
+     <validator type="requiredstring">
+        <param name="fieldname">attorneyVo.respondent</param>
+        <message>Respondent  is required.</message>
+    </validator>
+
+</validators>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+      <tiles-definitions>
+      <definition name="baseLayout" template="/WEB-INF/views/layout/baseLayout.jsp">            
+            <put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
+			<put-attribute name="menubar" value="/WEB-INF/views/layout/navbar.jsp" />
+			<put-attribute name="content" value="" />
+			<put-attribute name="footer" value="/WEB-INF/views/layout/footer.html" />
+       </definition>
+        <definition name="loginForm" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/login.jsp" />
+       </definition>
+       
+       <definition name="index" extends="baseLayout">
+       <put-attribute name="menubar" value="" />
+            <put-attribute name="content" value="/WEB-INF/views/login.jsp" />
+       </definition>
+       
+        <definition name="showerr" extends="baseLayout">
+       <put-attribute name="menubar" value="" />
+            <put-attribute name="content" value="/WEB-INF/views/common/showerr.jsp" />
+       </definition>
+       
+        <definition name="chpwd" extends="baseLayout">
+            <put-attribute name="menubar" value="" />
+            <put-attribute name="content" value="/WEB-INF/views/chpwd.jsp" />
+       </definition>
+       
+        <definition name="error_page" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/common/showerr.jsp" />
+       </definition>
+       
+        <definition name="permissions" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/permissions.jsp" />
+       </definition>
+        <definition name="user_mnt" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/usermaint.jsp" />
+       </definition>
+       <definition name="owner_mnt" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/ownermaint.jsp" />
+       </definition>
+       <definition name="property_mnt" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/propertymaint.jsp" />
+       </definition>
+        <definition name="under_construct" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/common/underconstruct.jsp" />
+       </definition>
+       <definition name="prop_user_relation" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/PropUserRelation.jsp" />
+       </definition>
+       
+       <definition name="prop_tenant" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/proptenant.jsp" />
+       </definition>
+       
+       <definition name="rent_collect" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/managerents.jsp" />
+       </definition>
+       
+       <definition name="rent_change" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/rentchange.jsp" />
+       </definition>
+      
+       <definition name="assigncontract" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/assigncontract.jsp" />
+       </definition>
+       
+       <definition name="manageowncontract" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/manageowncontracts.jsp" />
+       </definition>
+       
+     <!--  Tenant screens -->
+       <definition name="tenancy" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/tenancy.jsp" />
+       </definition>
+       <definition name="payment" extends="baseLayout">
+            <put-attribute name="menubar" value="" />
+            <put-attribute name="content" value="/WEB-INF/views/payment.jsp" />
+       </definition>
+       
+       
+      <definition name="tenanttasks" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/tenanttasks.jsp" />
+       </definition>
+       <definition name="tenantreports" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/tenantreports.jsp" />
+       </definition>
+       
+        <!--  Contractor screens -->
+      
+      <definition name="manamycontracts" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/manamycontracts.jsp" />
+       </definition>
+     
+      <definition name="viewContract" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/viewContract.jsp" />
+       </definition>
+       
+        <definition name="create_progress" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/createprogress.jsp" />
+       </definition> 
+       <definition name="view_contract_progress" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/viewcontractprogress.jsp" />
+       </definition> 
+      
+      <definition name="view_progress" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/viewprogress.jsp" />
+       </definition>
+      
+      
+      <definition name="contracttasks" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/contractortasks.jsp" />
+       </definition>
+       <definition name="contractreports" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/contractorreports.jsp" />
+       </definition>
+       
+  <!--  Attorney screens -->
+       <definition name="create_case" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/createcase.jsp" />
+       </definition>
+       
+        <definition name="update_case" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/viewcase.jsp" />
+       </definition>
+       
+       <definition name="view_attcases" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/attcases.jsp" />
+       </definition> 
+       
+        <definition name="create_hearing" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/createhearing.jsp" />
+       </definition>
+       
+       <definition name="update_hearing" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/updatehearing.jsp" />
+       </definition>
+       
+      <definition name="prop_attorney" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/propattorney.jsp" />
+       </definition>  
+       
+         <definition name="case_hearings" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/viewhearings.jsp" />
+       </definition>  
+       
+       
+      <definition name="owner_tasks" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/ownertasks.jsp" />
+       </definition>
+       <definition name="attorneyreports" extends="baseLayout">
+            <put-attribute name="content" value="/WEB-INF/views/attorneyreports.jsp" />
+       </definition>
+       
+       
+       
+       
+      </tiles-definitions> 

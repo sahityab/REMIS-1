@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+
+    <field name="propRentInfoVo.propertyID">  
+      <field-validator type="requiredstring">
+          <message key="message.propertyID.required"/>
+      </field-validator>   
+   	</field>
+
+     <field name="propRentInfoVo.tntName">  
+      <field-validator type="requiredstring">
+          <message key="message.tntName.required"/>
+      </field-validator>   
+   	</field>
+   	
+   	 <field name="propRentInfoVo.rentamount">  
+      <field-validator type="requiredstring">
+          <message key="message.rentamount.required"/>
+      </field-validator>   
+   	</field>
+   	
+   	 <field name="propRentInfoVo.duedate">  
+      <field-validator type="requiredstring">
+          <message key="message.duedate.required"/>
+      </field-validator>   
+   	</field>
+   	
+   	 <field name="propRentInfoVo.rentterms">  
+      <field-validator type="requiredstring">
+          <message key="message.rentterms.required"/>
+      </field-validator>   
+   	</field>
+
+</validators>
+<!-- 
+<field name="propRentInfoVo.propertyID">  
+      <field-validator type="requiredstring">
+          <message key="error.property.name.required"/>
+      </field-validator>   
+   	</field> message.propertyID.required
+propertyID tntName rentamount duedate rentterms -->

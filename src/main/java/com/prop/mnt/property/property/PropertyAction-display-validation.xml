@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+   	<field name="propertyVo.propName">  
+      <field-validator type="requiredstring">
+          <message key="error.property.name.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="propertyVo.addr1">  
+      <field-validator type="requiredstring">
+          <message key="error.property.addr1.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="propertyVo.propCity">  
+      <field-validator type="requiredstring">
+          <message key="error.property.city.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="propertyVo.zip">  
+      <field-validator type="requiredstring">
+          <message key="error.property.zip.required"/>
+      </field-validator>   
+     </field>
+   	<field name="propertyVo.stateCd">  
+      <field-validator type="requiredstring">
+          <message key="error.property.state.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="propertyVo.propCountry">  
+      <field-validator type="requiredstring">
+          <message key="error.property.country.required"/>
+      </field-validator>   
+   	</field>
+   	 <field name="propertyVo.propContacttel">  
+      <field-validator type="requiredint">
+          <message key="error.property.phone.required"/>
+      </field-validator>   
+   	</field>
+ </validators>

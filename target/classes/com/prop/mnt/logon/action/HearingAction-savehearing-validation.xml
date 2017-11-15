@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+
+<field name="hearingVo.propertyId">  
+      <field-validator type="int">
+           <message>Property  is required.</message>
+      </field-validator>   
+   	</field>
+
+     <field name="hearingVo.caseId">  
+      <field-validator type="int">
+           <message>Case  is required.</message>
+      </field-validator>   
+   	</field>
+   
+   	<field name="hearingVo.hearingTask">  
+      <field-validator type="requiredstring">
+           <message>Hearing Task  is required.</message>
+      </field-validator>   
+   	</field>
+   	<field name="hearingVo.courtName">  
+      <field-validator type="requiredstring">
+           <message>Court Name  is required.</message>
+      </field-validator>   
+   	</field>
+
+</validators>

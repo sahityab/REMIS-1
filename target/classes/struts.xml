@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <!-- Struts 2 can call Static methods -->
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+    <constant name="struts.devMode" value="false" />
+    
+    <!-- 3 themes viz simple, xhtml (default) & css-xhtml -->
+    <!--  
+    <constant name="struts.ui.theme" value="simple"/>
+    -->
+    <constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+    <!-- <constant name="struts.action.excludePattern" value="/.*"/> -->
+    	
+    <package name="default" namespace="/" extends="struts-default,json-default">
+    
+       <result-types>           
+      		<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />        
+        </result-types>
+        
+        <default-action-ref name="remis" />
+       
+       <global-results>
+            <result name="login" type="tiles">index</result>
+		</global-results> 
+		
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+        
+        
+        <action name="index" class="com.prop.mnt.logon.action.LoginAction" method="index">
+			<result name="success" type="tiles">index</result>
+		</action>
+        
+		<action name="login" class="com.prop.mnt.logon.action.LoginAction" method="display">
+			<result name="success" type="tiles">index</result>
+			<result name="error" type="tiles">showerr</result>
+		</action>
+		<action name="submitlogin" class="com.prop.mnt.logon.action.LoginAction">
+			<result name="success" type="chain">${firstPage}</result>	
+			<result name="invalid" type="tiles">index</result>
+			<result name="input" type="tiles">index</result>
+			<result name="error" type="tiles">showerr</result>
+		</action>
+		<action name="logout" class="com.prop.mnt.logon.action.LoginAction" method="logout">
+			<result name="success" type="tiles">index</result>
+			<result name="error" type="tiles">showerr</result>
+		</action>
+		<action name="changepwd" class="com.prop.mnt.changepwd.action.ChangePasswordAction" method="display">
+		    <result name="success" type="tiles">chpwd</result>
+			<result name="error" type="tiles">showerr</result>
+		</action>
+		
+		<action name="submitchangepwd" class="com.prop.mnt.changepwd.action.ChangePasswordAction">
+			<result name="success" type="tiles">chpwd</result>
+			<result name="invalid" type="tiles">chpwd</result>
+			<result name="input" type="tiles">chpwd</result>
+			<result name="error" type="tiles">showerr</result>
+		</action>
+		<action name="setpermissions" class="com.prop.mnt.admin.PermissionAction" method="defaultData">
+			<result name="success" type="tiles">permissions</result>
+			<result name="input" type="tiles">permissions</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		<action name="displaypermissions" class="com.prop.mnt.admin.PermissionAction" method="display">
+			<result name="success" type="tiles">permissions</result>
+			<result name="input" type="tiles">permissions</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		<action name="savepermissions" class="com.prop.mnt.admin.PermissionAction">
+			<result name="success" type="tiles">permissions</result>
+			<result name="input" type="tiles">permissions</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		<action name="usermanagement" class="com.prop.mnt.admin.user.UserAction" method="display">
+			<result name="success" type="tiles">user_mnt</result>
+			<result name="input" type="tiles">user_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		<action name="showuser" class="com.prop.mnt.admin.user.UserAction" method="showUser">
+			<result name="success" type="tiles">user_mnt</result>
+			<result name="input" type="tiles">user_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		<action name="saveuser" class="com.prop.mnt.admin.user.UserAction">
+			<result name="success" type="tiles">user_mnt</result>
+			<result name="input" type="tiles">user_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		<action name="deleteuser" class="com.prop.mnt.admin.user.UserAction" method="deleteUser">
+			<result name="success" type="tiles">user_mnt</result>
+			<result name="input" type="tiles">user_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+       <action name="ownermanagement" class="com.prop.mnt.property.owner.OwnerAction" method="display">
+			<result name="success" type="tiles">owner_mnt</result>
+			<result name="input" type="tiles">owner_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		<action name="showowner" class="com.prop.mnt.property.owner.OwnerAction" method="showOwner">
+			<result name="success" type="tiles">owner_mnt</result>
+			<result name="input" type="tiles">owner_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		<action name="saveowner" class="com.prop.mnt.property.owner.OwnerAction">
+			<result name="success" type="tiles">owner_mnt</result>
+			<result name="input" type="tiles">owner_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		<action name="deleteowner" class="com.prop.mnt.property.owner.OwnerAction" method="deleteOwner">
+			<result name="success" type="tiles">owner_mnt</result>
+			<result name="input" type="tiles">owner_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+       <action name="propertymanagement" class="com.prop.mnt.property.property.PropertyAction" method="display">
+			<result name="success" type="tiles">property_mnt</result>
+			<result name="input" type="tiles">property_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+       <action name="showproperty" class="com.prop.mnt.property.property.PropertyAction" method="showProperty">
+			<result name="success" type="tiles">property_mnt</result>
+			<result name="input" type="tiles">property_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+       <action name="saveproperty" class="com.prop.mnt.property.property.PropertyAction">
+			<result name="success" type="tiles">property_mnt</result>
+			<result name="input" type="tiles">property_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+       <action name="deleteproperty" class="com.prop.mnt.property.property.PropertyAction" method="deleteProperty">
+			<result name="success" type="tiles">property_mnt</result>
+			<result name="input" type="tiles">property_mnt</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		<action name="propagent" class="com.prop.mnt.common.UnderConstructAction" method="display">
+			<result name="success" type="tiles">under_construct</result>
+		</action>		
+		<action name="propcontractor" class="com.prop.mnt.common.UnderConstructAction" method="display">
+			<result name="success" type="tiles">under_construct</result>
+		</action>		
+		<action name="insurance" class="com.prop.mnt.common.UnderConstructAction" method="display">
+			<result name="success" type="tiles">under_construct</result>
+		</action>		
+		<action name="propinsurance" class="com.prop.mnt.common.UnderConstructAction" method="display">
+			<result name="success" type="tiles">under_construct</result>
+		</action>		
+		<action name="proptenant" class="com.prop.mnt.logon.action.TenantAction" method="propTenant">
+			<result name="success" type="tiles">prop_tenant</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>	
+		
+		<action name="getproptntrentinfo" class="com.prop.mnt.logon.action.TenantAction" method="propTenant">
+			<result name="success" type="tiles">rent_change</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+			
+		<action name="rentchange" class="com.prop.mnt.logon.action.TenantAction" method="rentChange">
+			<result name="success" type="tiles">rent_change</result>
+				<result name="error" type="tiles">error_page</result>		
+		</action>		
+		<action name="savepropertyrent" class="com.prop.mnt.logon.action.TenantAction">
+			<result name="success" type="tiles">rent_change</result>
+				<result name="error" type="tiles">error_page</result>		
+		</action>
+		
+		<action name="rentcollect" class="com.prop.mnt.logon.action.TenantAction" method="rentCollect">
+			<result name="success" type="tiles">rent_collect</result>
+		</action>		
+		<!-- <action name="propattorney" class="com.prop.mnt.common.UnderConstructAction" method="display">
+			<result name="success" type="tiles">under_construct</result>
+		</action> -->		
+		<action name="proplegal" class="com.prop.mnt.common.UnderConstructAction" method="display">
+			<result name="success" type="tiles">under_construct</result>
+		</action>		
+		<action name="propertyreport" class="com.prop.mnt.common.UnderConstructAction" method="display">
+			<result name="success" type="tiles">under_construct</result>
+		</action>		
+		<action name="ownertasks" class="com.prop.mnt.common.UnderConstructAction" method="display">
+			<result name="success" type="tiles">under_construct</result>
+		</action>		
+		<action name="propdocs" class="com.prop.mnt.common.UnderConstructAction" method="display">
+			<result name="success" type="tiles">under_construct</result>
+		</action>
+		<action name="propuserrelation" class="com.prop.mnt.property.user.relation.PropertyUserRelationAction" method="displayRelation">
+			<result name="success" type="tiles">prop_user_relation</result>
+			<result name="input" type="tiles">prop_user_relation</result>
+			<result name="error" type="tiles">error_page</result>			
+		</action>
+		<action name="propuserrelation_save" class="com.prop.mnt.property.user.relation.PropertyUserRelationAction" method="saveRelation">
+			<result name="success" type="tiles">prop_user_relation</result>
+			<result name="input" type="tiles">prop_user_relation</result>
+			<result name="error" type="tiles">error_page</result>			
+		</action>	
+		<action name="propuserrelation_delete" class="com.prop.mnt.property.user.relation.PropertyUserRelationAction" method="deleteRelation">
+			<result name="success" type="tiles">prop_user_relation</result>
+			<result name="input" type="tiles">prop_user_relation</result>
+			<result name="error" type="tiles">error_page</result>			
+		</action>
+		
+		<action name="savesubproperty" class="com.prop.mnt.property.user.relation.PropertyUserRelationAction" method="saveSubProperty">
+			<result name="success" type="tiles">sub_properties</result>
+			<result name="error" type="tiles">error_page</result>			
+		</action>
+		
+		<action name="updatesubproperty" class="com.prop.mnt.property.user.relation.PropertyUserRelationAction" method="updateSubProperty">
+			<result name="success" type="tiles">sub_properties</result>
+			<result name="error" type="tiles">error_page</result>			
+		</action>
+		
+		<action name="deletesubproperty" class="com.prop.mnt.property.user.relation.PropertyUserRelationAction" method="deleteSubProperty">
+			<result name="success" type="tiles">sub_properties</result>
+			<result name="error" type="tiles">error_page</result>			
+		</action>
+		
+<!-- tenant screens -->
+		<action name="tenancy" class="com.prop.mnt.logon.action.TenantAction" method="rentPay">
+			<result name="success" type="tiles">tenancy</result>
+			<result name="error" type="tiles">error_page</result>
+		</action> 
+		<action name="payment" class="com.prop.mnt.logon.action.TenantAction" method="payment">
+			<result name="success" type="tiles">payment</result>
+			<result name="input" type="tiles">tenancy</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		
+		<action name="tenanttasks" class="com.prop.mnt.logon.action.TenantAction" method="tasks">
+			<result name="success" type="tiles">tenanttasks</result>
+		</action>	
+		<action name="tenantreports" class="com.prop.mnt.logon.action.TenantAction" method="reports">
+			<result name="success" type="tiles">tenantreports</result>
+		</action>		
+		
+<!-- contraction screens -->		
+		<action name="assigncontract" class="com.prop.mnt.logon.action.ContractorAction" method="display">
+			<result name="success" type="tiles">assigncontract</result>
+		</action>
+		<action name="savecontract" class="com.prop.mnt.logon.action.ContractorAction">
+			<result name="success" type="tiles">assigncontract</result>
+		</action>
+		
+		<action name="manageownercontracts" class="com.prop.mnt.logon.action.ContractorAction" method="manageOwnerContrcts">
+			<result name="success" type="tiles">manageowncontract</result>
+			<result name="error_page" type="tiles">error_page</result>
+		</action>
+		<action name="viewcontract" class="com.prop.mnt.logon.action.ContractorAction" method="viewContract">
+			<result name="success" type="tiles">viewContract</result>
+			<result name="error_page" type="tiles">error_page</result>
+		</action>
+		<action name="createprogress" class="com.prop.mnt.logon.action.ContractorAction" method="createProgress">
+			<result name="success" type="tiles">create_progress</result>
+			<result name="error_page" type="tiles">error_page</result>
+		</action>
+		
+		<action name="viewcontractprogress" class="com.prop.mnt.logon.action.ContractorAction" method="viewContractProgress">
+			<result name="success" type="tiles">view_contract_progress</result>
+			<result name="error_page" type="tiles">error_page</result>
+		</action>
+		
+		<action name="viewsingleprogress" class="com.prop.mnt.logon.action.ContractorAction" method="viewSingleProgress">
+			<result name="success" type="tiles">view_progress</result>
+			<result name="error_page" type="tiles">error_page</result>
+		</action>
+		
+		
+		<action name="saveprogress" class="com.prop.mnt.logon.action.ContractorAction" method="saveProgress">
+			<result name="success" type="tiles">create_progress</result>
+			<result name="error_page" type="tiles">error_page</result>
+		</action>
+		
+		<action name="manamycontracts" class="com.prop.mnt.logon.action.ContractorAction" method="manageContractorContracts">
+			<result name="success" type="tiles">manamycontracts</result>
+		</action> 
+		
+		
+		<action name="contracttasks" class="com.prop.mnt.logon.action.ContractorAction" method="tasks">
+			<result name="success" type="tiles">contracttasks</result>
+		</action>	
+		<action name="contractreports" class="com.prop.mnt.logon.action.ContractorAction" method="reports">
+			<result name="success" type="tiles">contractreports</result>
+		</action>	
+      <!-- attorney screens -->
+		
+		
+		<action name="propattorney" class="com.prop.mnt.logon.action.CasesAction" method="manageOwnerCases">
+			<result name="success" type="tiles">prop_attorney</result>
+		</action>
+		
+		<action name="createcase" class="com.prop.mnt.logon.action.AttorneyAction" method="createCase">
+			<result name="success" type="tiles">create_case</result>
+		</action>
+		
+		<action name="savecase" class="com.prop.mnt.logon.action.AttorneyAction">
+			<result name="success" type="tiles">create_case</result>
+			<result name="input" type="tiles">create_case</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		
+		<action name="viewcase" class="com.prop.mnt.logon.action.AttorneyAction" method="viewCase">
+			<result name="success" type="tiles">update_case</result>
+		</action>
+		
+		<action name="updatecase" class="com.prop.mnt.logon.action.AttorneyAction" method="updateCase">
+			<result name="success" type="tiles">update_case</result>
+			<result name="input" type="tiles">update_case</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		
+		<action name="createhearing" class="com.prop.mnt.logon.action.HearingAction" method="createCaseHearing">
+			<result name="success" type="tiles">create_hearing</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		
+		<action name="savehearing" class="com.prop.mnt.logon.action.HearingAction">
+			<result name="success" type="tiles">create_hearing</result>
+			<result name="input" type="tiles">create_hearing</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		<action name="viewhearing" class="com.prop.mnt.logon.action.HearingAction" method="viewHearing">
+			<result name="success" type="tiles">update_hearing</result>
+			<result name="input" type="tiles">update_hearing</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		
+		<action name="updatehearing" class="com.prop.mnt.logon.action.HearingAction" method="updateHearing">
+			<result name="success" type="tiles">update_hearing</result>
+			<result name="input" type="tiles">update_hearing</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		
+		<action name="casehearings" class="com.prop.mnt.logon.action.HearingAction" method="getCaseHearings">
+			<result name="success" type="tiles">case_hearings</result>
+		</action>
+		
+		 
+		<action name="ownertasks" class="com.prop.mnt.logon.action.TasksAction" method="ownerTasks">
+			<result name="success" type="tiles">owner_tasks</result>
+			<result name="error" type="tiles">error_page</result>
+		</action>
+		
+		<action name="viewattcases" class="com.prop.mnt.logon.action.CasesAction" method="manageAttorneyCases">
+			<result name="success" type="tiles">view_attcases</result>
+		</action>
+		
+		<action name="attorneytasks" class="com.prop.mnt.logon.action.AttorneyAction" method="tasks">
+			<result name="success" type="tiles">attorneytasks</result>
+		</action>	
+		<action name="attorneyreports" class="com.prop.mnt.logon.action.AttorneyAction" method="reports">
+			<result name="success" type="tiles">attorneyreports</result>
+		</action>	
+				
+		  <action name="ajaxAction" class="com.prop.mnt.logon.action.AjaxJsonAction">
+		     <result name="success" type="json">
+                   <param name="contentType">application/json</param>
+              </result>
+	     </action>
+	     
+	    <action name="closenotification" class="com.prop.mnt.logon.action.AjaxJsonAction" method="closenotification">
+		  <result name="success" type="stream">
+                   <param name="contentType">text/plain</param>
+            </result>
+
+	   </action> 	 	
+	   
+	   	
+    </package>
+    
+    
+</struts>

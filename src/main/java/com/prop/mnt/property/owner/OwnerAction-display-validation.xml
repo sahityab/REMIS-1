@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+   	<field name="ownerVo.ownFName">  
+      <field-validator type="requiredstring">
+          <message key="error.owner.firstname.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="ownerVo.ownLName">  
+      <field-validator type="requiredstring">
+          <message key="error.owner.lastName.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="ownerVo.ownType">  
+      <field-validator type="requiredstring">
+          <message key="error.owner.owntype.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="ownerVo.ownSsn">  
+      <field-validator type="requiredstring">
+          <message key="error.owner.ownssn.required"/>
+      </field-validator>   
+   	</field>
+   	  	<field name="ownerVo.address1">  
+      <field-validator type="requiredstring">
+          <message key="error.owner.address1.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="ownerVo.city">  
+      <field-validator type="requiredstring">
+          <message key="error.owner.city.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="ownerVo.stateCd">  
+      <field-validator type="requiredstring">
+          <message key="error.owner.state.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="ownerVo.country">  
+      <field-validator type="requiredstring">
+          <message key="error.owner.country.required"/>
+      </field-validator>   
+   	</field>
+   	<field name="ownerVo.zip">  
+      <field-validator type="requiredstring">
+          <message key="error.owner.zip.required"/>
+      </field-validator>   
+   	</field>
+   	 	<field name="ownerVo.phone">  
+      <field-validator type="requiredstring">
+          <message key="error.owner.phone.required"/>
+      </field-validator>   
+   	</field>
+   <field name="userVo.email">  
+      <field-validator type="requiredstring">
+          <message key="message.user.email.required"/>
+      </field-validator>   
+	  <field-validator type="email">
+          <message key="message.owner.email.invalid"/>
+      </field-validator>   
+   	</field>
+</validators>

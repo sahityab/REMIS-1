@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+<!-- <field name="propRentInfoVo.duedate">
+   <field-validator type="int">
+        <param name="min">1</param>
+        <param name="max">31</param>
+        <message>Due Date must be ${min} - ${max}</message>
+   </field-validator>
+</field> -->
+
+<validator type="requiredstring">
+        <param name="fieldname">propRentInfoVo.rentterms</param>
+        <message>Rentterms  is required.</message>
+    </validator>
+
+
+</validators>
